@@ -6,7 +6,10 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
-app.get('/students', (req, res) => {
+app.get('/api/students', (req, res) => {
+  
+ 
+
     const students = [
         { name: 'John Doe', rollno: '123', currentback: 0 },
         { name: 'Jane Smith', rollno: '124', currentback: 1 },
@@ -29,7 +32,11 @@ app.get('/students', (req, res) => {
         { name: 'Quincy Roberts', rollno: '141', currentback: 0 },
         { name: 'Rachel Scott', rollno: '142', currentback: 1 }
     ];
-    res.json(students);
+   
+    setTimeout(() => {
+        res.send(students);
+    }, 5000);
+    
 });
 
 const port = 8080;
